@@ -26,9 +26,9 @@ function App() {
           <Tempdata city={city}></Tempdata>
           <div>
           </div>
+        <Footer></Footer>
         </div>
 
-        <Footer></Footer>
       </div>
 
     </>

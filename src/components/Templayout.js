@@ -100,6 +100,7 @@ function Templayout(props) {
                 </div>
 
                 <div className="data">
+                    
                     <div className="humidity-pressure">
                         <div className="data-humidity">
                             <i className="fa fa-thermometer-half"></i>

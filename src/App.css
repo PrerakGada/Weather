@@ -1,22 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-*{
+
+* {
   margin: 0px;
   padding: 0px;
+
 }
+
 /* Outer box css */
-.out-container{
+.out-container {
   height: 100vh;
   width: 100vw;
   background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
- flex-direction: column;
- transition: background-color 0.5s ease;
+  flex-direction: column;
 }
-.main-container{
+
+.main-container {
   width: 55vw;
   height: 90vh;
   display: flex;
@@ -27,22 +30,45 @@
   background-position: center;
   position: relative;
   isolation: isolate;
-  border-radius: 50px;
+  border-radius: 10px;
 
 }
-.main-container::after{
+
+
+.main-container::after {
   content: "";
   position: absolute;
   z-index: -1;
   inset: 0;
   opacity: 0.6;
- background-color: black;
- border-radius: 50px;
- 
+  background-color: black;
+  border-radius: 10px;
+
 }
 
+/* Media Query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .out-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .main-container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+  }
+}
+
+
+
 /*Logo box css*/
-.logo-container{
+.logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,12 +78,14 @@
   color: white;
   margin-right: 30px;
 }
-.logo-container h2{
+
+.logo-container h2 {
   color: rgb(250, 206, 47);
   margin-bottom: 25px;
   font-size: 20px;
 }
-#logo{
+
+#logo {
   width: 40px;
   height: auto;
   margin-bottom: 25px;
@@ -65,31 +93,39 @@
 }
 
 /* Search css */
-.search-container{
+.search-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  color:#1f1f1f
 }
-.search-box{
-  width: 400px;
-  height: 50px;
+
+.search-box {
+  width: 250px;
+  height: 30px;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 18px;
   font-family: Manrope;
-  color:#1f1f1f
 }
-.btn{
+
+/* MediaQuery for Mobile Responsive */
+@media only screen and (max-width: 600px) {
+  .search-box {
+    width: 80vw;
+  }
+}
+
+.btn {
   border: 0px;
 }
-.btn:hover{
+
+.btn:hover {
   cursor: pointer;
 }
 
 /*Data container css*/
-.outer-data{
+.outer-data {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,51 +134,99 @@
   height: 55vh;
   color: white;
 }
-.data-weather{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- font-family: Manrope;
+
+/* MediaQuery of Mobile Responsive */
+@media only screen and (max-width: 600px) {
+  .outer-data {
+    width: 100vw;
+
+  }
 }
-.data-temp{
+
+.data-weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Manrope;
+}
+
+/* MediaQuery of Mobile Responsive */
+@media only screen and (max-width: 600px) {
+  .data-weather {
+    width: 100vw;
+  }
+}
+
+.data-temp {
   font-family: Manrope;
   width: 20vw;
   text-align: center;
 }
-.temp{
+
+/* MediaQuery of Mobile Responsive */
+@media only screen and (max-width: 600px) {
+  .data-temp {
+    width: 50vw;
+  }
+
+  .data-temp .temp {
+    font-size: 24px;
+  }
+
+  .data-temp .data-other {
+    font-size: 24px;
+  }
+
+}
+
+.temp {
   font-size: 90px;
 }
-.data-icon{
+
+.data-icon {
   width: 50px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.date-time{
+
+.date-time {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   flex-direction: column;
   margin-left: 10px;
   color: white;
   font-family: Manrope;
 }
-.date{
+
+.date {
   font-size: 40px;
 
 }
-.time{
+
+.time {
   font-size: 25px;
 }
-.data{
+
+.data {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 25vh;
 }
-.humidity-pressure,.wind-data{
+
+/* MediaQuery for Mobile Responsive */
+@media only screen and (max-width: 600px) {
+  .data {
+    flex-direction: column;
+    /* height: 40vh; */
+  }
+}
+
+.humidity-pressure, .wind-data {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,17 +235,28 @@
   height: 40vh;
   font-size: 18px;
 }
-.data-humidity,.data-pressure, .data-speed, .data-direction{
+
+/* MediaQuery for Mobile Responsive */
+@media only screen and (max-width: 600px) {
+  .humidity-pressure, .wind-data {
+    flex-direction: row;
+    padding: 10px 0;
+  }
+}
+
+.data-humidity, .data-pressure, .data-speed, .data-direction {
   display: flex;
   flex-direction: row;
   margin: 10px 0px;
 }
-i{
+
+i {
   height: 18px;
   width: 18px;
   margin: 5px 5px;
 }
-.icon-desc{
+
+.icon-desc {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,49 +264,10 @@ i{
 }
 
 /*Footer css*/
-#footer-container{
+#footer-container {
   width: 100%;
   height: 25px;
   text-align: center;
   color: gray;
   margin-top: 15px;
-}
-
-/*Dark mode css*/
-
-.dark-mode {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: Manrope;
-  background-color: #1f1f1f;
-  color: #ffffff;
-  transition: background-color 0.5s ease;
-}
-
-.dark-mode .out-container {
-  background-color: #1f1f1f;
-  transition: background-color 0.5s ease;
-}
-
-.dark-mode .search-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  color: white;
-   
-  transition: background-color 0.5s ease;
-}
-.dark-mode .search-box{
-  width: 400px;
-  height: 50px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 18px;
-  font-family: Manrope;
-  color: white;
-  background-color: black; 
-  transition: background-color 0.5s ease;
 }
